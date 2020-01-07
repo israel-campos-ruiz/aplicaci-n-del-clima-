@@ -1,0 +1,43 @@
+<form (ngSubmit) ="enviarDatos(forma)" #forma="ngForm" class="mt-5">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Ciudad</label>
+      <input
+            type="text"
+            class="form-control"
+            name="ciudad"
+            ngModel
+            required
+            >
+       
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Código país</label>
+      <input 
+      type="text" 
+      class="form-control"
+      name="codigo"
+      ngModel
+      required
+      >
+    </div>
+    <button type="submit" class="btn btn-primary">enviar</button>
+  </form>
+
+
+
+<div *ngIf="clima">
+  <div class="row ">
+    <div class="col-lg-6">
+      <div class="service-box">
+       <div class="service-text">
+           <h2 *ngIf="climaNombre" class="text-center mb-3">Clima en {{climaNombre}}</h2>
+  
+           <p class="text-info h3"> la temperatura actual: {{clima.temp}}</p>
+           <p class="text-info h3">Temperatura minima: {{clima.temp_min}}</p>
+           <p class="text-info h3"> temperatura maxima: {{clima.temp_max}}</p>
+  
+       </div>
+      </div>
+   </div>
+  </div>
+</div>
